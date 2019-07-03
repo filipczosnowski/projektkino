@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background-color: #E9EBEE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.activeFlip {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.activeButton {
+  -webkit-transform: scale(0.93);
+          transform: scale(0.93);
+}
+
+.text_afterReg {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 20px;
+}
+
+.text_afterReg span {
+  display: inline-block;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.text_afterReg span:nth-of-type(2) {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+section.startPage img.gif {
+  position: absolute;
+  top: 45%;
+  left: 48%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 2;
+}
+
+div.totalwrapper {
+  width: 700px;
+  height: 400px;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.wrapper {
+  width: 700px;
+  height: 400px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+div.wrapper > div {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+div.wrapper > div form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+div.wrapper > div form h1 {
+  font-size: 35px;
+  margin-bottom: 35px;
+}
+
+div.wrapper > div form input {
+  width: 80%;
+  height: 43px;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 16px;
+  padding: 15px;
+  background-color: #EEEEEE;
+}
+
+div.wrapper > div form input:focus {
+  border: solid 1px #9C27B0;
+}
+
+div.wrapper > div form button {
+  width: 80%;
+  height: 43px;
+  margin-bottom: 20px;
+  border: none;
+  font-size: 16px;
+  background-color: #9C27B0;
+  color: white;
+  font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+div.wrapper > div form span {
+  position: absolute;
+  bottom: 5%;
+}
+
+div.wrapper div.login {
+  background-color: white;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
+
+div.wrapper div.registerfirst {
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+  color: white;
+  background: linear-gradient(-45deg, #9C27B0 0%, #1d2129 100%) no-repeat 0 0/100%;
+}
+
+div.wrapper div.registerfirst h1 {
+  margin-bottom: 5%;
+}
+
+div.wrapper div.registerfirst p {
+  margin-bottom: 5%;
+}
+
+div.wrapper div.registerfirst svg {
+  width: 30%;
+  margin-bottom: 5%;
+}
+
+div.wrapper div.registerfirst button {
+  width: 60%;
+  height: 45px;
+  background-color: transparent;
+  border: white 1px solid;
+  border-radius: 50px;
+  line-height: 45px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+div.wrapper div.registerfirst button:focus {
+  outline: none;
+}
+
+div.wrapper div.registerfirst button i {
+  margin-left: 3px;
+  font-size: 23px;
+}
+
+div.wrapper.two {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) rotateY(180deg);
+          transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+div.wrapper.two > div {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+div.wrapper.two div.loginfirst {
+  border-radius: 0;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
+
+div.wrapper.two div.register {
+  position: relative;
+  border-radius: 0;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+footer {
+  position: absolute;
+  text-shadow: #1d2129 1px 1px 10px;
+  font-size: 20px;
+  bottom: 5%;
+  right: 5%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: -5;
+}
+/*# sourceMappingURL=style.css.map */

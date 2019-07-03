@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5a12271615.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/loginmediaq.css">
+
+</head>
+
+<body>
+    <section class="startPage">
+        <img class="gif" src="img/gif-camera-vidéo-5.gif" alt="">
+    </section>
+    <div class="totalwrapper">
+        <div class="wrapper">
+            <div class="login">
+                <form class="log">
+                    <h1>Logowanie</h1>
+                    <input type="email" placeholder="email" id="email" required>
+                    <input type="password" placeholder="hasło" id="password" required>
+                    <button>ZALOGUJ</button>
+                    <span class="copy">© <script>document.write(new Date().getFullYear());</script></span>
+                </form>
+            </div>
+            <div class="registerfirst">
+                <form class="register">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    <h1>Witaj przyjacielu!</h1>
+                    <p>Podaj swoje dane i rozpocznij filmową przygodę! </p>
+                    <button>ZAREJESTRUJ <i class="far fa-arrow-alt-circle-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="wrapper two">
+            <div class="loginfirst registerfirst">
+                <form class="login">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                        <polyline points="10 17 15 12 10 7"></polyline>
+                        <line x1="15" y1="12" x2="3" y2="12"></line>
+                    </svg>
+                    <h1>Witaj ponownie!</h1>
+                    <p>Zostałeś częścią naszej społeczności? Zaloguj się przy pomocy danych, które wykorzystałeś przy
+                        rejestracji! </p>
+                    <button><i class="far fa-arrow-alt-circle-left"></i> ZALOGUJ</button>
+                </form>
+            </div>
+            <div class="register login">
+                <form class="register">
+                    <h1>Rejestracja</h1>
+                    <input type="email" placeholder="email" id="emailregister" required>
+                    <input type="password" placeholder="hasło" required
+                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                        title="Hasło musi zawierać min. 8 znaków; 1 wielka litera, 1 mała litera, 1 cyfra/1 znak specjalny."
+                        id="passwordregister">
+                    <button>ZAREJESTRUJ</button>
+                    <span class="copy">© <script>document.write(new Date().getFullYear());</script></span>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>© Filip Czosnowski</footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://login-857b.restdb.io/rest/_jsapi.js"></script>
+    <script src="js/poklikuwkamere.js"></script>
+    <script src="js/logowanieirejestr.js"></script>
+    <script src="js/poklikuwrejestracjeilogowanie.js"></script>
+
+
+</body>
+
+</html>

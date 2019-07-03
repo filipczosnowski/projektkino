@@ -1,0 +1,706 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #E9EBEE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  font-size: 20px;
+}
+
+div.reservation {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E9EBEE;
+  z-index: 1;
+}
+
+div.reservation div.summary {
+  display: none;
+  position: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px white solid;
+  width: 50%;
+  height: 50%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+div.reservation div.summary h2 {
+  margin-bottom: 10px;
+}
+
+div.reservation div.summary p.reservationInfo {
+  width: 50%;
+  color: white;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+div.reservation div.summary form {
+  text-align: center;
+  width: 40%;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.reservation div.summary form button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  width: 80%;
+  background-color: transparent;
+  border: white 1px solid;
+  border-radius: 50px;
+  line-height: 45px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+div.reservation div.summary form button:focus {
+  outline: none;
+}
+
+div.reservation div.summary form button:hover {
+  color: #9C27B0;
+  background-color: white;
+}
+
+div.reservation div.reservationPanel {
+  display: none;
+  position: absolute;
+  overflow: visible;
+}
+
+div.reservation div.reservationPanel div.mySeat {
+  font-size: 10px;
+}
+
+div.reservation div.reservationPanel div.mySeat.choose {
+  color: black;
+  border: red 10px solid;
+  background: linear-gradient(-45deg, #9C27B0 0%, #ffffff 30%) no-repeat 0 0/100%;
+}
+
+div.reservation div.reservationPanel div.mySeat.block {
+  color: black;
+  background: linear-gradient(-45deg, #9C27B0 0%, #ffffff 30%) no-repeat 0 0/100%;
+  cursor: none;
+  pointer-events: none;
+}
+
+div.reservation div.reservationPanel div.mySeat.block:hover {
+  color: black;
+  background: linear-gradient(-45deg, #9C27B0 0%, #ffffff 30%) no-repeat 0 0/100%;
+  cursor: none;
+  pointer-events: none;
+}
+
+div.reservation div.reservationPanel.hidden {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.reservation div.reservationPanel div.screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 95%;
+  height: 13%;
+  border: 1px solid white;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  font-size: 27px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+}
+
+div.reservation div {
+  display: none;
+  background: linear-gradient(-45deg, #9C27B0 0%, #1d2129 100%) no-repeat 0 0/100%;
+  background-color: #9C27B0;
+  width: 60%;
+  height: 30vw;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  overflow: hidden;
+}
+
+div.reservation div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 10%;
+  height: 13%;
+  border: 1px solid white;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 27px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.reservation div div.title {
+  font-size: 24px;
+  width: 45%;
+}
+
+div.reservation div div.rooms {
+  font-size: 30px;
+  width: 45%;
+}
+
+div.reservation div div:hover {
+  color: black;
+  background: linear-gradient(-45deg, #9C27B0 0%, #ffffff 30%) no-repeat 0 0/100%;
+}
+
+i.fa-times {
+  position: absolute;
+  font-size: 0px;
+  top: 7%;
+  right: 7%;
+  color: #9C27B0;
+  z-index: 4;
+  -webkit-transition: .3s both;
+  transition: .3s both;
+  cursor: pointer;
+}
+
+i.fa-times.hidden {
+  font-size: 70px;
+}
+
+div.wrapper {
+  background-color: #E9EBEE;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+div.wrapper i.fa-times {
+  position: absolute;
+  font-size: 0;
+  top: 2%;
+  right: 2%;
+  color: white;
+  z-index: 4;
+}
+
+div.wrapper i.fa-times.hidden {
+  -webkit-transition: .3s 1s;
+  transition: .3s 1s;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+div.wrapper.hidden::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #E9EBEE;
+  content: "";
+  pointer-events: none;
+  z-index: 3;
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
+}
+
+@-webkit-keyframes swirl-out-bck {
+  0% {
+    -webkit-transform: rotate(0) scale(1) translate(-50%, -50%);
+            transform: rotate(0) scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+            transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes swirl-out-bck {
+  0% {
+    -webkit-transform: rotate(0) scale(1) translate(-50%, -50%);
+            transform: rotate(0) scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+            transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img.load.animation {
+  -webkit-animation: swirl-out-bck 0.4s ease-in both;
+          animation: swirl-out-bck 0.4s ease-in both;
+}
+
+img.load {
+  width: 10%;
+  min-width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+span.spanInfo {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+span.spanInfo span {
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section.cinemaChoose {
+  display: none;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.cinemaChoose div.before {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+  height: 45vw;
+  max-width: 440px;
+  max-height: 440px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 80%;
+  background-image: url("/afterlogin/img/cinemaPoznan.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+section.cinemaChoose div.before.popUp {
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  z-index: 3;
+  opacity: 1;
+}
+
+section.cinemaChoose div.background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+  height: 45vw;
+  max-width: 440px;
+  max-height: 440px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 80%;
+  background: linear-gradient(-45deg, #9C27B0 0%, #1d2129 100%) no-repeat 0 0/100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+section.cinemaChoose div.background.popUp {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  z-index: 3;
+  opacity: 0.9;
+}
+
+section.cinemaChoose div.background div.insidepopUp {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section.cinemaChoose div.background div.insidepopUp h1 {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 20px;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  z-index: 3;
+}
+
+section.cinemaChoose div.background div.insidepopUp h1.hidden {
+  display: block;
+}
+
+section.cinemaChoose div.background div.insidepopUp button {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  left: 50%;
+  bottom: 10%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20%;
+  height: 45px;
+  background-color: transparent;
+  border: white 1px solid;
+  border-radius: 50px;
+  line-height: 45px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+section.cinemaChoose div.background div.insidepopUp button:focus {
+  outline: none;
+}
+
+section.cinemaChoose div.background div.insidepopUp button:hover {
+  color: #9C27B0;
+  background-color: white;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList p.movieInfo {
+  display: none;
+  width: 50%;
+  color: white;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: left;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList p.movieInfo span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList p.movieInfo i {
+  color: white;
+  font-size: 100px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  font-size: 70px;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList div.movie {
+  width: 15%;
+  cursor: pointer;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList div.movie:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList div.movie.none {
+  display: none;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList div.movie.clicked {
+  width: 35%;
+  height: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList div.movie.clicked:hover {
+  -webkit-transform: none;
+          transform: none;
+}
+
+section.cinemaChoose div.background div.insidepopUp div.moviesList div.movie img {
+  width: 100%;
+  height: 100%;
+}
+
+section.cinemaChoose div.infoText {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  width: 80%;
+  border-radius: 50%;
+}
+
+section.cinemaChoose div.infoText.hidden {
+  width: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+section.cinemaChoose div.infoText:hover > p.info {
+  color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+section.cinemaChoose div.infoText p.info {
+  font-size: 17px;
+  font-weight: bold;
+  position: absolute;
+  width: 80%;
+  color: transparent;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+
+section.cinemaChoose div.infoText p.info.hidden {
+  display: none;
+}
+
+section.cinemaChoose div.infoText img.imgCircle {
+  width: 95%;
+  height: 95%;
+  border-radius: 80%;
+  opacity: 1;
+  z-index: 2;
+  cursor: pointer;
+  -webkit-transition: .5s ease-out;
+  transition: .5s ease-out;
+}
+
+section.cinemaChoose div.infoText img.imgCircle.opacityHover {
+  opacity: 0.08;
+}
+
+div.arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.arrows i {
+  color: #9C27B0;
+  font-size: 100px;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+div.arrows i:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+section.logout {
+  display: none;
+  position: absolute;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 10%;
+  right: 0%;
+  z-index: 2;
+}
+
+section.logout span {
+  opacity: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section.logout img.exit {
+  margin-left: 10px;
+  width: 30%;
+  min-width: 30px;
+  cursor: pointer;
+}
+
+section.logout img.exit.hidden {
+  pointer-events: none;
+}
+
+section.logout img.exit:hover + span {
+  opacity: 1;
+}
+
+p.helloUser {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+}
+
+p.helloUser.hidden {
+  pointer-events: none;
+}
+
+p.helloUser span {
+  font-weight: bold;
+  color: red;
+}
+/*# sourceMappingURL=styleafter.css.map */

@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@-webkit-keyframes swirl-out-bck {
+  0% {
+    -webkit-transform: rotate(0) scale(1) translate(-50%, -50%);
+            transform: rotate(0) scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+            transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+@keyframes swirl-out-bck {
+  0% {
+    -webkit-transform: rotate(0) scale(1) translate(-50%, -50%);
+            transform: rotate(0) scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+            transform: rotate(-540deg) scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #E9EBEE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  font-size: 20px;
+}
+
+img.load.animation {
+  -webkit-animation: swirl-out-bck 0.4s ease-in both;
+          animation: swirl-out-bck 0.4s ease-in both;
+}
+
+img.load {
+  width: 10%;
+  min-width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+section.logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 10%;
+  right: 0%;
+}
+
+section.logout span {
+  opacity: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section.logout img.exit {
+  margin-left: 10px;
+  width: 30%;
+  min-width: 30px;
+  cursor: pointer;
+}
+
+section.logout img.exit.hidden {
+  pointer-events: none;
+}
+
+section.logout img.exit:hover + span {
+  opacity: 1;
+}
+
+p.helloUser {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+
+p.helloUser.hidden {
+  pointer-events: none;
+}
+
+p.helloUser span {
+  font-weight: bold;
+  color: red;
+}
+/*# sourceMappingURL=cinemaCity.css.map */
